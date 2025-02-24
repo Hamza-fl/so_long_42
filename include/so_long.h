@@ -6,6 +6,7 @@
 # include <stdlib.h>
 # include "../utils/get_next_line/get_next_line.h"
 # include "../utils/ft_printf/ft_printf.h"
+# include "path.h"
 # define TILE_SIZE 32
 # define KEY_ESC 53
 # define KEY_W 13
@@ -46,11 +47,27 @@ typedef struct s_game
 	int			total_collectibles;
 	int			player_count;
 	int			exit_count;
-	int			game_won;
+	int			won;
 }	t_game;
 
 int	ft_strcmp(char *s1, char *s2);
+size_t	ft_strlen(const char *str);
+void	clean_game(t_game *game);
+void	image_free(t_game *game);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char	*ft_strdup(const char *s1);
+int	handle_errors(int ac, char *file);
+int	move_player(t_game *game, int dx, int dy);
+
 int	handle_errors(int ac, char *file);
 int	setup_game(t_game *game, char *file);
+int	parse_map(t_game *game, char *file);
+int	map_matrice(int fd, t_game *game);
+void	free_matrice(char **matrice, int height);
 
+int	valid_walls(t_game *game);
+int	valid_chars(t_game *game);
+int	valid_map(t_game *game);
+
+void	setup_hooks(t_game *game);
 #endif
