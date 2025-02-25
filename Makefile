@@ -19,7 +19,7 @@ MAIN_SRC		= so_long.c
 SRC				= $(MAIN_SRC) $(UTILS_SRC) $(GNL_SRC) $(PRINTF_SRC)
 OBJ				= $(SRC:.c=.o)
 
-INC				= include/so_long.h $(GNL_DIR)/get_next_line.h $(PRINTF_DIR)/ft_printf.h
+INC				= include/so_long.h include/path.h $(GNL_DIR)/get_next_line.h $(PRINTF_DIR)/ft_printf.h
 
 all: $(NAME)
 

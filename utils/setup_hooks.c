@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:07:30 by hfalati           #+#    #+#             */
-/*   Updated: 2025/02/24 20:59:57 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/02/25 10:57:21 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 int	handle_keypress(int keycode, t_game *game)
 {
-    int mov;
+	int	mov;
 
-    mov = 0;
-    if (keycode == KEY_ESC)
-    {
-        clean_game(game);
-        exit(0);
-    }
-    if (keycode == KEY_W || keycode == KEY_UP)
+	mov = 0;
+	if (keycode == KEY_ESC)
+	{
+		clean_game(game);
+		exit(0);
+	}
+	if (keycode == KEY_W || keycode == KEY_UP)
 		mov = move_player(game, 0, -1);
 	else if (keycode == KEY_S || keycode == KEY_DOWN)
 		mov = move_player(game, 0, 1);
@@ -30,7 +30,7 @@ int	handle_keypress(int keycode, t_game *game)
 		mov = move_player(game, -1, 0);
 	else if (keycode == KEY_D || keycode == KEY_RIGHT)
 		mov = move_player(game, 1, 0);
-    if (mov)
+	if (mov)
 	{
 		game->moves++;
 		ft_printf("Moves: %d\n", game->moves);

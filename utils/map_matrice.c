@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:56:49 by hfalati           #+#    #+#             */
-/*   Updated: 2025/02/24 19:48:01 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:02:10 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,22 @@ int	alloc_row(t_game *game, char *line, int i)
 
 int	map_matrice(int fd, t_game *game)
 {
-    int i;
-    char *line;
+	int		i;
+	char	*line;
 
-    i = 0;
-    while (i < game->map->height)
-    {
-        line = get_next_line(fd);
-        if (!line || !alloc_row(game, line, i))
-        {
-            free_matrice(game->map->matrice, i);
-            free(line);
-            close(fd);
-            return (0);
-        }
-        free(line);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (i < game->map->height)
+	{
+		line = get_next_line(fd);
+		if (!line || !alloc_row(game, line, i))
+		{
+			free_matrice(game->map->matrice, i);
+			free(line);
+			close(fd);
+			return (0);
+		}
+		free(line);
+		i++;
+	}
+	return (1);
 }

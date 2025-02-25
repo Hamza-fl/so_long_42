@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:15:51 by hfalati           #+#    #+#             */
-/*   Updated: 2025/02/24 19:32:06 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:09:27 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_horizontal(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < game->map->width)
@@ -29,7 +29,7 @@ int	check_horizontal(t_game *game)
 
 int	check_vertical(t_game *game)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < game->map->height)

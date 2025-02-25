@@ -12,16 +12,16 @@
 
 #include "./include/so_long.h"
 
-int main (int ac, char **av)
+int	main(int ac, char **av)
 {
-    t_game game;
+	t_game	game;
 
-    if (handle_errors(ac,av[1]))
-        exit(1);
-    if (!setup_game(&game, av[1]))
-        exit(1);
-    setup_hooks(&game);
-    mlx_loop(game.mlx);
+	if (handle_errors(ac, av[1]))
+		exit(1);
+	if (!setup_game(&game, av[1]))
+		exit(1);
+	setup_hooks(&game);
+	mlx_loop(game.mlx);
 	clean_game(&game);
 	return (0);
 }

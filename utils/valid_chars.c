@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:26:29 by hfalati           #+#    #+#             */
-/*   Updated: 2025/02/24 18:41:31 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/02/25 11:08:57 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,5 @@ int	valid_chars(t_game *game)
 		i++;
 	}
 	return (game->player_count == 1 && game->exit_count == 1
-			&& game->total_collectibles > 0);
+		&& game->total_collectibles > 0);
 }

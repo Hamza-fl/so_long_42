@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.h                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/25 11:00:28 by hfalati           #+#    #+#             */
+/*   Updated: 2025/02/25 11:00:28 by hfalati          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
@@ -50,24 +62,25 @@ typedef struct s_game
 	int			won;
 }	t_game;
 
-int	ft_strcmp(char *s1, char *s2);
+int		ft_strcmp(char *s1, char *s2);
 size_t	ft_strlen(const char *str);
 void	clean_game(t_game *game);
 void	image_free(t_game *game);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strdup(const char *s1);
-int	handle_errors(int ac, char *file);
-int	move_player(t_game *game, int dx, int dy);
+int		handle_errors(int ac, char *file);
+int		move_player(t_game *game, int dx, int dy);
 
-int	handle_errors(int ac, char *file);
-int	setup_game(t_game *game, char *file);
-int	parse_map(t_game *game, char *file);
-int	map_matrice(int fd, t_game *game);
+int		handle_errors(int ac, char *file);
+int		setup_game(t_game *game, char *file);
+int		parse_map(t_game *game, char *file);
+int		map_matrice(int fd, t_game *game);
 void	free_matrice(char **matrice, int height);
 
-int	valid_walls(t_game *game);
-int	valid_chars(t_game *game);
-int	valid_map(t_game *game);
+int		valid_walls(t_game *game);
+int		valid_chars(t_game *game);
+int		valid_map(t_game *game);
 
 void	setup_hooks(t_game *game);
+
 #endif

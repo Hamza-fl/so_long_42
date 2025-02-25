@@ -6,7 +6,7 @@
 /*   By: hfalati <hfalati@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:18:11 by hfalati           #+#    #+#             */
-/*   Updated: 2025/02/24 21:07:02 by hfalati          ###   ########.fr       */
+/*   Updated: 2025/02/25 10:56:03 by hfalati          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,18 @@ int	check_win_condition(t_game *game, int x, int y)
 
 int	move_player(t_game *game, int dx, int dy)
 {
-    int new_x;
-    int new_y;
+	int	new_x;
+	int	new_y;
 
-    new_x = game->player_x + dx;
-    new_y = game->player_y + dy;
-    if (!is_valid_position(game, new_x, new_y))
-        return (0);
-    if (game->map->matrice[new_y][new_x] == 'C')
-        collect_item(game, new_x, new_y);
-    else if (check_win_condition(game, new_x, new_y) == 1)
+	new_x = game->player_x + dx;
+	new_y = game->player_y + dy;
+	if (!is_valid_position(game, new_x, new_y))
+		return (0);
+	if (game->map->matrice[new_y][new_x] == 'C')
+		collect_item(game, new_x, new_y);
+	else if (check_win_condition(game, new_x, new_y) == 1)
 		exit(0);
-    game->player_x = new_x;
+	game->player_x = new_x;
 	game->player_y = new_y;
 	return (1);
 }
